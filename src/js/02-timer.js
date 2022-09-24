@@ -12,6 +12,7 @@ dataSeconds: document.querySelector('[data-seconds]'),
 refs.btnStart.setAttribute('disabled', true);
 
 let selectedDate = null;
+let deltaTime = null;
 
 class Timer {
   constructor({onTick}) {
