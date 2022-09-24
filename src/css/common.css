@@ -32,7 +32,7 @@ button {
 
 }
 .field {
-  flex-basis: 5%;
+  flex-basis:3%;
   text-align: center;
 }
 .field:not(:first-child){
