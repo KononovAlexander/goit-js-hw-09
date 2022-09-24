@@ -12,7 +12,7 @@ dataSeconds: document.querySelector('[data-seconds]'),
 refs.btnStart.setAttribute('disabled', true);
 
 let selectedDate = null;
-let deltaTime = null;
+// let deltaTime = null;
 
 class Timer {
   constructor({onTick}) {
@@ -68,9 +68,8 @@ const options = {
   defaultDate: Date.now(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    selectedDate = this.selectedDates[0];    
+    selectedDate = selectedDates[0];    
     selectedDate > options.defaultDate ? refs.btnStart.removeAttribute('disabled') : (refs.btnStart.setAttribute('disabled', true), window.alert("Please choose a date in the future")); 
-    deltaTime = selectedDates[0] - options.defaultDate; 
   },
 };
 
