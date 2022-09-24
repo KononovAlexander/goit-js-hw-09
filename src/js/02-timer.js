@@ -21,7 +21,8 @@ class Timer {
   start(userDate) {
     this.timerId = setInterval(() => {
       const { days, hours, minutes, seconds } = this.convertMs(userDate - Date.now());
-    this.deltaTime !== 0 ? updateTimerInterface({ days, hours, minutes, seconds }) : clearInterval(this.timerId);
+    (Math.round(userDate - Date.now()))  >= 0  ? updateTimerInterface({ days, hours, minutes, seconds }) : clearInterval(this.timerId);
+
     }, 1000);
   }
 
@@ -56,6 +57,7 @@ function updateTimerInterface({ days, hours, minutes, seconds }) {
 
 refs.btnStart.addEventListener('click', () => { 
   timer.start(selectedDate);
+
 });
 
 
